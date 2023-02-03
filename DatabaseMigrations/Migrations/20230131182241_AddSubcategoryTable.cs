@@ -21,7 +21,7 @@ namespace DatabaseMigrations.Migrations
                 insert into subcategories (name,categoryId) values ('Sports',1);
                 insert into subcategories (name,categoryId) values ('Topic of the day',1);
                 insert into subcategories (name,categoryId) values ('Local',1);
-                insert into subcategories (name,categoryId) values ('Clubs',1);";
+                insert into subcategories (name,categoryId) values ('ClubsNews',1);";
 
             Execute.Sql(sql);
         }
