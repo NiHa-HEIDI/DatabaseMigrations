@@ -10,17 +10,25 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"CREATE TABLE IF NOT EXISTS categories(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	                name varchar(255)
+	                name varchar(255),
+                    noOfSubcategories int DEFAULT 0
                 );
-                insert into categories (name) values ('Company Portraits');
-                insert into categories (name) values ('Construction and Traffic Listings');
-                insert into categories (name) values ('Defect Reporter');
-                insert into categories (name) values ('Event Listings');
-                insert into categories (name) values ('Lost Property Office');
-                insert into categories (name) values ('Offer Search');
+                insert into categories (name, noOfSubcategories) values ('News', 8);
+                insert into categories (name) values ('Road works / Traffic');
+                insert into categories (name) values ('Events / News');
+                insert into categories (name) values ('Associations');
                 insert into categories (name) values ('Regional Products');
-                insert into categories (name) values ('Societies Listings');
-                insert into categories (name) values ('Warning Messages Listings');";
+                insert into categories (name) values ('Offer / Search');
+                insert into categories (name) values ('New citizen info');
+                insert into categories (name) values ('Waste calendar ');
+                insert into categories (name) values ('Defect report ');
+                insert into categories (name) values ('Lost property office ');
+                insert into categories (name) values ('Company portraits ');
+                insert into categories (name) values ('Corona Info  ');
+                insert into categories (name) values ('Carpooling / Public transport ');
+                insert into categories (name) values ('Surveys ');
+                insert into categories (name) values ('Weather ');
+                insert into categories (name) values ('Offers ');";
 
             Execute.Sql(sql);
         }

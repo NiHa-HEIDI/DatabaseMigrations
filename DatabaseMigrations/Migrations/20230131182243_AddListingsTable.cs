@@ -19,6 +19,8 @@ namespace DatabaseMigrations.Migrations
                     media varchar(255),
                     categoryId int,
                     FOREIGN KEY(categoryId) REFERENCES categories(id),
+                    subCategoryId int,
+                    FOREIGN KEY(subCategoryId) REFERENCES subcategories(id),
                     address varchar(255),
                     email varchar(255),
                     phone varchar(255),
