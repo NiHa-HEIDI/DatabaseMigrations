@@ -2,13 +2,14 @@
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20230131143445)]
+    [Migration(3)]
     public class AddUsersTable : Migration
     {
         public override void Up()
         {
             string sql =
-               @"CREATE TABLE USERS (
+               @"DROP TABLE IF EXISTS USERS;
+                CREATE TABLE USERS (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
 	                username varchar(255) NOT NULL,
 	                firstname varchar(255) NOT NULL, 
