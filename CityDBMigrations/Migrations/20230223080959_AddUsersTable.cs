@@ -24,7 +24,7 @@ namespace DatabaseMigrations.Migrations
 	                CONSTRAINT UC_Username UNIQUE (username),
 	                CONSTRAINT UC_Email UNIQUE (email)
                 );
-                insert into users values( 1, ""Admin"", ""Admin"", ""Admin"", ""admin@heidi-app.de"", ""phn no"",""image.link"", ""--description--"", ""www.heidi.com"", 1);";
+                insert into users values( 1, ""Admin"", ""Admin"", ""Admin"", ""admin@heidi-app.de"", NULL, NULL, NULL, ""www.heidi.com"", 1);";
 
             Execute.Sql(sql);
         }

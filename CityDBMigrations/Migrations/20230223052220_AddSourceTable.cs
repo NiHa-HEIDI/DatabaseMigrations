@@ -3,7 +3,7 @@
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20230223052220)]
-    public class addSourceTable : Migration
+    public class AddSourceTable : Migration
     {
         public override void Up()
         {
