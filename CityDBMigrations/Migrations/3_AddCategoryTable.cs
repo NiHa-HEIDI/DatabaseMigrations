@@ -2,7 +2,7 @@
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(3)]
+    [Migration(20230223081013)]
     public class AddCategoryTable : Migration
     {
         public override void Up()

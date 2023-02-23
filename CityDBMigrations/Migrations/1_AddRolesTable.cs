@@ -2,7 +2,7 @@
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(1)]
+    [Migration(20230223080949)]
     public class AddRolesTable : Migration
     {
         public override void Up()
