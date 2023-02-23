@@ -2,7 +2,7 @@
 
 namespace CoreDBMigrations.Migrations
 {
-    [Migration(1)]
+    [Migration(20230223080843)]
     public class AddCitiesTable : Migration
     {
         public override void Up()

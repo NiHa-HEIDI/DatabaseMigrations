@@ -129,9 +129,6 @@ namespace test
             }
         }
 
-        /// <summary>
-        /// Configure the dependency injection services
-        /// </summary>
         private static ServiceProvider CreateServices(string connectionString, bool isCoreDb = false)
         {
             string assemblyName = isCoreDb ? "CoreDBMigrations" : "CityDBMigrations";
@@ -151,9 +148,6 @@ namespace test
                 .BuildServiceProvider(false);
         }
 
-        /// <summary>
-        /// Update the database
-        /// </summary>
         private static void UpdateDatabase(IServiceProvider serviceProvider, bool downMigrate, long? targetVersion)
         {
             // Instantiate the runner
