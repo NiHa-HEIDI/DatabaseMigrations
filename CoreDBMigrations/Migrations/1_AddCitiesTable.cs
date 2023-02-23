@@ -10,9 +10,9 @@ namespace CoreDBMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS CITIES;
                  CREATE TABLE CITIES(
-	                Id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	                Name varchar(255),
-	                ConnectionString varchar(255)
+	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	                name varchar(255),
+	                connectionString varchar(255)
                 );";
 
             Execute.Sql(sql);

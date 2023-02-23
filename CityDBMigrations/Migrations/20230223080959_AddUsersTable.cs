@@ -23,7 +23,8 @@ namespace DatabaseMigrations.Migrations
 	                FOREIGN KEY (roleId) REFERENCES ROLES(id),
 	                CONSTRAINT UC_Username UNIQUE (username),
 	                CONSTRAINT UC_Email UNIQUE (email)
-                );";
+                );
+                insert into users values( 1, ""Admin"", ""Admin"", ""Admin"", ""admin@mail.com"", ""phn no"",""image.link"", ""--description--"", ""www.website.com"", 1);";
 
             Execute.Sql(sql);
         }
