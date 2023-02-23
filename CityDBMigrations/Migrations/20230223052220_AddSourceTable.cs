@@ -12,7 +12,8 @@ namespace DatabaseMigrations.Migrations
                 CREATE TABLE source(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                name varchar(255)
-                );";
+                );
+                insert into source (name) value (""User entry"");";
             Execute.Sql(sql);
         }
 
