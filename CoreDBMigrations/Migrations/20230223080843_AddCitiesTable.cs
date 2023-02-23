@@ -12,7 +12,8 @@ namespace CoreDBMigrations.Migrations
                  CREATE TABLE CITIES(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                name varchar(255),
-	                connectionString varchar(255)
+	                connectionString varchar(255),
+	                isAdminListings BOOLEAN
                 );";
 
             Execute.Sql(sql);
