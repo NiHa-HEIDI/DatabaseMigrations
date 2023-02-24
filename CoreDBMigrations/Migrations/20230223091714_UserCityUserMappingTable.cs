@@ -10,10 +10,10 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS User_CityUser_Mapping;
                 CREATE TABLE User_CityUser_Mapping (
-	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
 	                userId int,
 	                cityId int,
-	                cityUserId int
+	                cityUserId int,
+                    UNIQUE KEY `unique_ids` (`userId`,`cityId`,`cityUserId`)
                 );";
 
             Execute.Sql(sql);
