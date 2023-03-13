@@ -12,7 +12,7 @@ namespace CoreDBMigrations.Migrations
                  CREATE TABLE REFRESHTOKENS(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                userId INT,
-	                refreshToken varchar(255),
+	                refreshToken TEXT,
 	                sourceAddress varchar(255),
 	                FOREIGN KEY (userId) REFERENCES USERS(id)
                 );";
