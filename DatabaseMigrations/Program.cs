@@ -86,6 +86,7 @@ namespace test
                 using (var serviceProvider = CreateServices(coreConnectionString, true))
                 using (var scope = serviceProvider.CreateScope())
                 {
+                    Console.WriteLine("\n\n\nRunning migrations for Core DB ...\n\n\n");
                     UpdateDatabase(scope.ServiceProvider, downMigrate, targetVersion);
                 }
             }
@@ -123,6 +124,7 @@ namespace test
                     using (var serviceProvider = CreateServices(cityConnectionString))
                     using (var scope = serviceProvider.CreateScope())
                     {
+                        Console.WriteLine($"\n\n\nRunning migrations for City DB {connection.cityId} ...\n\n\n");
                         UpdateDatabase(scope.ServiceProvider, downMigrate, targetVersion);
                     }
                 }
