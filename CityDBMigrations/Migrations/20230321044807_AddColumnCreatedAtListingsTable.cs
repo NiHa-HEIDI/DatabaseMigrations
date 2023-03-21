@@ -3,13 +3,13 @@ using System.Data.Common;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20230314080207)]
-    public class IncreaseDescriptionColumnSizeListingsTable : Migration
+    [Migration(20230321044807)]
+    public class AddColumnCreatedAtListingsTable : Migration
     {
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE listings CHANGE COLUMN description description VARCHAR(10000);";
+               @"ALTER TABLE listings ADD createdAt DATETIME;";
 
             Execute.Sql(sql);
         }
@@ -17,7 +17,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE listings CHANGE COLUMN description description VARCHAR(255); ";
+               @"ALTER TABLE listings DROP column createdAt;";
 
             Execute.Sql(sql);
         }
