@@ -13,7 +13,7 @@ namespace DatabaseMigrations.Migrations
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                name varchar(255)
                 );
-                insert into status values (1,""Active""), (2,""inactive""), (3,""Pending"");";
+                insert into status values (1,""Active""), (2,""Inactive""), (3,""Pending"");";
             Execute.Sql(sql);
         }
 
