@@ -6,8 +6,8 @@ achieve this which is written in .NET
 ## Setup
 ### Installation
 First install these softwares in your local
-- MySql 8.0
-- DotNet 7.0
+- [MySql 8.0](https://dev.mysql.com/downloads/file/?id=518834) 
+- [DotNet 7.0](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-7.0.203-windows-x64-installer)
 
 ### Create two schemas on local
 
@@ -24,10 +24,29 @@ Then, create a user with these credentials and **give all privilages** (can be d
 - username: devuser
 - password: devpassword
 
+```sql
+CREATE USER 'devuser'@'localhost' IDENTIFIED BY 'devpassword';
+GRANT ALL ON *.* TO 'devuser'@'localhost';
+FLUSH PRIVILEGES;
+```
+
 ### Execute migrations
 
-Then run the migrations on your machine, just run the following commands where the DatabaseMigrations.sln file is present (This will be present in the **rootfile/DatabaseMigrations** )
+Then run the migrations on your local machine. To do this, go to  **rootfile/DatabaseMigrations**
 
+## Add a new file named "App.config" 
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <connectionStrings>
+        <add name="CoreDBConnection" connectionString="server=localhost;user=devuser;password=devpassword;database=heidi_core"/>
+        <add name="CityDBZeroConnection" connectionString="server=localhost;user=devuser;password=devpassword;database=heidi_city_0"/>
+    </connectionStrings>
+</configuration>
+```
+
+Run the following commands in command prompt in the current location  **rootfile/DatabaseMigrations**
 ```bash
 dotnet build
 dotnet run
