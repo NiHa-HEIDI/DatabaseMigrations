@@ -15,11 +15,12 @@ namespace DatabaseMigrations.Migrations
                     FOREIGN KEY(userId) REFERENCES USERS(id),
                     title varchar(255),
                     place varchar(255),
-                    description varchar(255),
-                    socialMedia varchar(255),
+                    description varchar(10000),
                     media varchar(255),
                     categoryId int,
                     FOREIGN KEY(categoryId) REFERENCES CATEGORIES(id),
+                    subcategoryId INT,
+                    FOREIGN KEY(subcategoryId) REFERENCES subcategory(Id),
                     address varchar(255),
                     email varchar(255),
                     phone varchar(255),
@@ -36,7 +37,8 @@ namespace DatabaseMigrations.Migrations
                     villageId int,
                     FOREIGN KEY(villageId) REFERENCES village(id),
                     startDate DATETIME,
-                    endDate DATETIME
+                    endDate DATETIME,
+                    createdAt DATETIME
                 );";
             Execute.Sql(sql);
         }
