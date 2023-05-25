@@ -17,7 +17,7 @@ namespace DatabaseMigrations.Migrations
                     FOREIGN KEY(postId) REFERENCES ForumPosts(id),  
                     userId int, 
                     FOREIGN KEY(userId) REFERENCES USERS(id),
-                    createdAt DATETIME,
+                    createdAt DATETIME
                 );";
             Execute.Sql(sql);
         }

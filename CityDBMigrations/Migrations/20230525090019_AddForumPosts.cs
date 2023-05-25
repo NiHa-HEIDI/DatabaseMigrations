@@ -9,7 +9,7 @@ namespace DatabaseMigrations.Migrations
         {
             string sql =
                @"DROP TABLE IF EXISTS ForumPosts;
-                CREATE TABLE ForumPosts (
+                CREATE TABLE ForumPosts(
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     forumId int, 
                     FOREIGN KEY(forumId) REFERENCES FORUMS(id),    
@@ -19,7 +19,7 @@ namespace DatabaseMigrations.Migrations
                     FOREIGN KEY(userId) REFERENCES USERS(id),
                     image varchar(255),
                     createdAt DATETIME,
-                    isHide BOOLEAN,
+                    isHide BOOLEAN
                 );";
             Execute.Sql(sql);
         }

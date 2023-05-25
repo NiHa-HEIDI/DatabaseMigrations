@@ -11,7 +11,7 @@ namespace DatabaseMigrations.Migrations
                @"DROP TABLE IF EXISTS ForumStatus;
                 CREATE TABLE ForumStatus (
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-                    name varchar(255),
+                    name varchar(255)
                 );";
             Execute.Sql(sql);
         }

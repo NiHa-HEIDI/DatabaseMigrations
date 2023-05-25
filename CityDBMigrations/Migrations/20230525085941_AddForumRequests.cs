@@ -17,7 +17,7 @@ namespace DatabaseMigrations.Migrations
                     statusId int,
                     FOREIGN KEY(statusId) REFERENCES ForumStatus(id),
                     createdAt DATETIME,
-                    updatedAt DATETIME,
+                    updatedAt DATETIME
                 );";
             Execute.Sql(sql);
         }

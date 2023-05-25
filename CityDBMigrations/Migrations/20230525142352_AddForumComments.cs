@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20230525090112)]
+    [Migration(20230525142352)]
     public class AddForumComments: Migration
     {
         public override void Up()
@@ -18,7 +18,7 @@ namespace DatabaseMigrations.Migrations
                     userId int, 
                     FOREIGN KEY(userId) REFERENCES USERS(id),
                     comments varchar(1000),
-                    createdAt DATETIME,
+                    createdAt DATETIME
                 );";
             Execute.Sql(sql);
         }
