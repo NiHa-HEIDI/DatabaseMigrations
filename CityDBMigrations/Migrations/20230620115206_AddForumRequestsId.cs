@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-                @"ALTER TABLE ForumRequests DROP COLUMN int;";
+                @"ALTER TABLE ForumRequests DROP COLUMN id;";
 
             Execute.Sql(sql);
         }
