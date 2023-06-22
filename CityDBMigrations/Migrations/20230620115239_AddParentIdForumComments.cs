@@ -9,7 +9,7 @@ namespace DatabaseMigrations.Migrations
         {
             string sql =
                @"
-                ALTER TABLE forumcomments ADD COLUMN parentId int NOT NULL;
+                ALTER TABLE forumcomments ADD COLUMN parentId int;
                 ALTER TABLE forumcomments ADD CONSTRAINT fk_forumcomments_id_parent_id  FOREIGN KEY (parentId) REFERENCES forumcomments(id);";
 
             Execute.Sql(sql);
@@ -19,7 +19,7 @@ namespace DatabaseMigrations.Migrations
         {
             string sql =
                 @"
-                ALTER TABLE heidi_city_1.forumcomments DROP FOREIGN KEY fk_forumcomments_id_parent_id;
+                ALTER TABLE forumcomments DROP FOREIGN KEY fk_forumcomments_id_parent_id;
                 ALTER TABLE ForumRequests DROP COLUMN parentId;";
 
             Execute.Sql(sql);
