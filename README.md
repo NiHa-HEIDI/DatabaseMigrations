@@ -34,6 +34,10 @@ FLUSH PRIVILEGES;
 
 Then run the migrations on your local machine. To do this, go to  **rootfile/DatabaseMigrations**
 
+## Detailed documentation 
+
+[Document](https://github.com/HEIDI-Heimat-Digital/documentation/wiki)
+
 ## Add a new file named "App.config" 
 
 ```xml
