@@ -2,11 +2,14 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20230703112440)]
+    [Migration(20230724141540)]
     public class AddSPToDeleteForumPost : Migration
     {
         public override void Up()
         {
+            /* 
+                24 July 2023 -> Deleted child comments before deleting parent comments - Moiz
+            */
             string sql =
                @"
                 DROP PROCEDURE IF EXISTS sp_DeleteForumPost;
@@ -18,6 +21,7 @@ namespace DatabaseMigrations.Migrations
                             RESIGNAL;
                         END;
                     START TRANSACTION;
+                        DELETE FROM forumcomments fc where fc.forumId = forumId and fc.postId = postId and fc.parentId is not NULL;
                         DELETE FROM forumcomments fc where fc.forumId = forumId and fc.postId = postId;
 		                DELETE FROM forumposts fp where fp.forumId = forumId and fp.id = postId;
 	                COMMIT;
