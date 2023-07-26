@@ -23,7 +23,7 @@ namespace DatabaseMigrations.Migrations
                         UNION ALL
                         SELECT fc1.* FROM forumcomments fc1 
                         INNER JOIN 
-                        heidi_city_1.forumcomments fc2 ON fc1.id = fc2.parentId
+                        forumcomments fc2 ON fc1.id = fc2.parentId
                         WHERE fc1.postId = postId AND fc1.forumId = forumId) AS t WHERE postId = postId AND forumId = forumId AND parentId is NULL GROUP BY id, forumId, postId, comments, createdAt, userId  LIMIT pageNo ,pageSize; 
 
 	                COMMIT;
