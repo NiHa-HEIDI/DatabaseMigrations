@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"INSERT INTO subcategory (id, name, categoryId) VALUES (10, ""Amtliche Mitteilung"", 1);";
+               @"INSERT INTO subcategory (id, name, categoryId) VALUES (10, ""Official notification"", 1);";
 
             Execute.Sql(sql);
         }
