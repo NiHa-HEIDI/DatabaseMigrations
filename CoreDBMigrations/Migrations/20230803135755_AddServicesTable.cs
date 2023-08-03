@@ -14,7 +14,7 @@ namespace CoreDBMigrations.Migrations
 	                name varchar(255),
                     isRunning BOOLEAN,
                     safeStop BOOLEAN,
-                    createdAt DATETIME,
+                    createdAt DATETIME
                 );";
 
             Execute.Sql(sql);
