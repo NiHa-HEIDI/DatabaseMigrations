@@ -2,11 +2,16 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20230704113921)]
+    [Migration(20230802102756)]
     public class AddSPToDeleteForums : Migration
     {
         public override void Up()
-        {
+        {   
+            /*
+                Changes made
+                --------------------------------------------------------------------------
+                2 August 2023 -> changed postReports to RepostedPosts - Sonu
+            */
             string sql =
                @"
                 DROP PROCEDURE IF EXISTS sp_DeleteForums;
@@ -19,7 +24,7 @@ namespace DatabaseMigrations.Migrations
                         END;
                     START TRANSACTION;
                         DELETE FROM forumcomments fc where fc.forumId = forumId;
-                        DELETE FROM postreports pr where pr.forumId = forumId;
+                        DELETE FROM ReportedPosts pr where pr.forumId = forumId;
                         DELETE FROM forumposts fp where fp.forumId = forumId;
                         DELETE FROM ForumRequests fr where fr.forumId = forumId;
                         DELETE FROM forummembers fm where fm.forumId = forumId;
