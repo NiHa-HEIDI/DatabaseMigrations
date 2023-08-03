@@ -11,10 +11,11 @@ namespace CoreDBMigrations.Migrations
                @"DROP TABLE IF EXISTS ServiceLogs;
                  CREATE TABLE ServiceLogs(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    FOREIGN KEY (inputId) REFERENCES ServiceInput(id),
                     startTime DATETIME,
                     endTime DATETIME,
                     stack varchar(1000),
-	                status varchar(255),
+                    FOREIGN KEY (statusId) REFERENCES ServiceStatus(id),
                     createdAt DATETIME,
                 );";
 

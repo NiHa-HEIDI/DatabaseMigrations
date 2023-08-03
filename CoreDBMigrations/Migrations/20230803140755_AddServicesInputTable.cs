@@ -12,7 +12,7 @@ namespace CoreDBMigrations.Migrations
                  CREATE TABLE ServiceInput(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     input varchar(1000) NOT NULL,
-	                serviceId int NOT NULL,
+                    FOREIGN KEY (serviceId) REFERENCES Services(id),
                     retryLimit int NOT NULL,
                     createdAt DATETIME
                 );";
