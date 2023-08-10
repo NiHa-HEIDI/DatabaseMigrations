@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20230802102767)]
+    [Migration(20230810131716)]
     public class AddSPToDeleteForumPost : Migration
     {
         public override void Up()
@@ -10,6 +10,7 @@ namespace DatabaseMigrations.Migrations
             /* 
                 24 July 2023 -> Deleted child comments before deleting parent comments - Moiz
                 2 August 2023 -> Delete reported post - Sonu
+                10 August 2023 -> rename ReportedPostes to ReportedPosts - Ajay
             */
             string sql =
                @"
@@ -24,7 +25,7 @@ namespace DatabaseMigrations.Migrations
                     START TRANSACTION;
                         DELETE FROM forumcomments fc where fc.forumId = forumId and fc.postId = postId and fc.parentId is not NULL;
                         DELETE FROM forumcomments fc where fc.forumId = forumId and fc.postId = postId;
-                        DELETE FROM ReportedPostes rp where rp.forumid = forumId and rp.postId = postId;
+                        DELETE FROM ReportedPosts rp where rp.forumid = forumId and rp.postId = postId;
 		                DELETE FROM forumposts fp where fp.forumId = forumId and fp.id = postId;
 	                COMMIT;
                 END;";
