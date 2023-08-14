@@ -14,6 +14,9 @@ namespace CoreDBMigrations.Migrations
                     input varchar(1000) NOT NULL,
                     serviceId int,
                     FOREIGN KEY (serviceId) REFERENCES Services(id),
+                    startAfter DATETIME,
+                    frequency int,
+                    failures int,
                     retryLimit int NOT NULL,
                     createdAt DATETIME
                 );";
