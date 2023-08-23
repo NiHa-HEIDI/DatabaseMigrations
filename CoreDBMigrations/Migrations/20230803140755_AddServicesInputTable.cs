@@ -16,7 +16,7 @@ namespace CoreDBMigrations.Migrations
                     FOREIGN KEY (serviceId) REFERENCES Services(id),
                     startAfter DATETIME,
                     frequency int,
-                    failures int,
+                    failureCount int,
                     retryLimit int NOT NULL,
                     createdAt DATETIME
                 );";
