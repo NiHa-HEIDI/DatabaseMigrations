@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE USERS ADD COLUMN socialMedia varchar(255);";
+               @"ALTER TABLE users ADD COLUMN socialMedia varchar(255);";
 
             Execute.Sql(sql);
         }
@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE USERS DROP COLUMN socialMedia;";
+               @"ALTER TABLE users DROP COLUMN socialMedia;";
 
             Execute.Sql(sql);
         }

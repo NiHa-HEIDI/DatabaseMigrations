@@ -8,8 +8,8 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-                @"ALTER TABLE PostReports RENAME TO ReportedPosts;
-                  ALTER TABLE ReportedPosts ADD Reason varchar(255);
+                @"ALTER TABLE postreports RENAME TO reportedposts;
+                  ALTER TABLE reportedposts ADD Reason varchar(255);
                 ";
 
             Execute.Sql(sql);
@@ -18,7 +18,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE ReportedPosts DROP COLUMN Reason;
+               @"ALTER TABLE reportedposts DROP COLUMN Reason;
                ";
 
             Execute.Sql(sql);

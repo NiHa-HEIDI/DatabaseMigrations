@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE FORUMS ADD COLUMN description varchar(10000), ADD COLUMN image varchar(255) ;";
+               @"ALTER TABLE forums ADD COLUMN description varchar(10000), ADD COLUMN image varchar(255) ;";
 
             Execute.Sql(sql);
         }
@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-                @"ALTER TABLE FORUMS DROP COLUMN description , DROP COLUMN image ;";
+                @"ALTER TABLE forums DROP COLUMN description , DROP COLUMN image ;";
 
             Execute.Sql(sql);
         }

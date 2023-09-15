@@ -13,7 +13,7 @@ namespace DatabaseMigrations.Migrations
 	                userId int NOT NULL,
 	                token varchar(255),
 	                expiresAt DATETIME,
-	                FOREIGN KEY (userId) REFERENCES USERS(id),
+	                FOREIGN KEY (userId) REFERENCES users(id),
 	                CONSTRAINT UC_Userid UNIQUE (userid)
                 );";
 

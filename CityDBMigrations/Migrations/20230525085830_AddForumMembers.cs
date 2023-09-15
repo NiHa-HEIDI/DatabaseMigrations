@@ -8,13 +8,13 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS ForumMembers;
-                CREATE TABLE ForumMembers (
+               @"DROP TABLE IF EXISTS forummembers;
+                CREATE TABLE forummembers (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
                     forumId int, 
-                    FOREIGN KEY(forumId) REFERENCES FORUMS(id),    
+                    FOREIGN KEY(forumId) REFERENCES forums(id),    
                     userId int, 
-                    FOREIGN KEY(userId) REFERENCES USERS(id),
+                    FOREIGN KEY(userId) REFERENCES users(id),
                     JoinedAt DATETIME,
                     isAdmin BOOLEAN
                 );";
@@ -24,7 +24,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS ForumMembers;";
+               @"DROP TABLE IF EXISTS forummembers;";
 
             Execute.Sql(sql);
         }

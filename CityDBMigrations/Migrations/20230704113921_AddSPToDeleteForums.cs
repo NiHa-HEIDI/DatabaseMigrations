@@ -24,9 +24,9 @@ namespace DatabaseMigrations.Migrations
                         END;
                     START TRANSACTION;
                         DELETE FROM forumcomments fc where fc.forumId = forumId;
-                        DELETE FROM ReportedPosts pr where pr.forumId = forumId;
+                        DELETE FROM reportedposts pr where pr.forumId = forumId;
                         DELETE FROM forumposts fp where fp.forumId = forumId;
-                        DELETE FROM ForumRequests fr where fr.forumId = forumId;
+                        DELETE FROM forumrequests fr where fr.forumId = forumId;
                         DELETE FROM forummembers fm where fm.forumId = forumId;
                         DELETE FROM forums fs where fs.id = forumId;
                     COMMIT;

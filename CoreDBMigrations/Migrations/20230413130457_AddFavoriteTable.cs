@@ -8,13 +8,13 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS FAVORITES;
-                CREATE TABLE FAVORITES(
+               @"DROP TABLE IF EXISTS favorites;
+                CREATE TABLE favorites(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     userId int,
-                    FOREIGN KEY (userId) REFERENCES USERS(id),
+                    FOREIGN KEY (userId) REFERENCES users(id),
                     cityId int,
-                    FOREIGN KEY (cityId) REFERENCES  CITIES(id),
+                    FOREIGN KEY (cityId) REFERENCES  cities(id),
                     listingId int
                     );";
             Execute.Sql(sql);
@@ -22,7 +22,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS FAVORITES;";
+               @"DROP TABLE IF EXISTS favorites;";
             Execute.Sql(sql);
         }
     }

@@ -8,12 +8,12 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS ROLES;
-                CREATE TABLE ROLES(
+               @"DROP TABLE IF EXISTS roles;
+                CREATE TABLE roles(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                name varchar(255)
                 );
-                INSERT INTO ROLES values (1, ""Administrator""), (2, ""Department Head""), (3, ""Content Creator"");";
+                INSERT INTO roles values (1, ""Administrator""), (2, ""Department Head""), (3, ""Content Creator"");";
 
             Execute.Sql(sql);
         }
@@ -21,7 +21,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS ROLES;";
+               @"DROP TABLE IF EXISTS roles;";
 
             Execute.Sql(sql);
         }

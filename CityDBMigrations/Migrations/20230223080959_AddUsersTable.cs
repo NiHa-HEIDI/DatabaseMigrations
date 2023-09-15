@@ -8,8 +8,8 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS USERS;
-                CREATE TABLE USERS (
+               @"DROP TABLE IF EXISTS users;
+                CREATE TABLE users (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
 	                username varchar(255) NOT NULL,
 	                firstname varchar(255) NOT NULL, 
@@ -20,7 +20,7 @@ namespace DatabaseMigrations.Migrations
 	                description varchar(255),
 	                website varchar(255),
 	                roleId int,
-	                FOREIGN KEY (roleId) REFERENCES ROLES(id),
+	                FOREIGN KEY (roleId) REFERENCES roles(id),
 	                CONSTRAINT UC_Username UNIQUE (username),
 	                CONSTRAINT UC_Email UNIQUE (email)
                 );
@@ -32,7 +32,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS USERS;";
+               @"DROP TABLE IF EXISTS users;";
 
             Execute.Sql(sql);
         }

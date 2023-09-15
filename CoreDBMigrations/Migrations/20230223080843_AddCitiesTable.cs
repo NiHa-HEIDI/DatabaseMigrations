@@ -8,8 +8,8 @@ namespace CoreDBMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS CITIES;
-                 CREATE TABLE CITIES(
+               @"DROP TABLE IF EXISTS cities;
+                 CREATE TABLE cities(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                name varchar(255),
 	                connectionString varchar(255),
@@ -22,7 +22,7 @@ namespace CoreDBMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS CITIES;";
+               @"DROP TABLE IF EXISTS cities;";
 
             Execute.Sql(sql);
         }

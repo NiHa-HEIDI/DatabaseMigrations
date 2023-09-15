@@ -8,11 +8,11 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS CITIZEN_SERVICES;
-                CREATE TABLE CITIZEN_SERVICES(
+               @"DROP TABLE IF EXISTS citizen_services;
+                CREATE TABLE citizen_services(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     cityId int,
-                    FOREIGN KEY (cityId) REFERENCES CITIES(id),
+                    FOREIGN KEY (cityId) REFERENCES cities(id),
                     title varchar(255),
                     image varchar(255),
                     link varchar(255)
@@ -22,7 +22,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS CITIZEN_SERVICES;";
+               @"DROP TABLE IF EXISTS citizen_services;";
             Execute.Sql(sql);
         }
     }

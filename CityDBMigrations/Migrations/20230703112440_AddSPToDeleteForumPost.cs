@@ -25,7 +25,7 @@ namespace DatabaseMigrations.Migrations
                     START TRANSACTION;
                         DELETE FROM forumcomments fc where fc.forumId = forumId and fc.postId = postId and fc.parentId is not NULL;
                         DELETE FROM forumcomments fc where fc.forumId = forumId and fc.postId = postId;
-                        DELETE FROM ReportedPosts rp where rp.forumid = forumId and rp.postId = postId;
+                        DELETE FROM reportedposts rp where rp.forumid = forumId and rp.postId = postId;
 		                DELETE FROM forumposts fp where fp.forumId = forumId and fp.id = postId;
 	                COMMIT;
                 END;";

@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-                @"ALTER TABLE ForumPosts RENAME COLUMN isHide TO isHidden ;";
+                @"ALTER TABLE forumposts RENAME COLUMN isHide TO isHidden ;";
 
             Execute.Sql(sql);
         }
@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE ForumPosts DROP COLUMN isHidden ;";
+               @"ALTER TABLE forumposts DROP COLUMN isHidden ;";
 
             Execute.Sql(sql);
         }
