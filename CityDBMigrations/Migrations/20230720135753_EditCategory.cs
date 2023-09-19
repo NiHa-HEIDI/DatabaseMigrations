@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20230720125756)]
+    [Migration(20230720135753)]
     public class EditCategoryTable : Migration
     {
         public override void Up()
