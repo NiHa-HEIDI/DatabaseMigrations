@@ -8,8 +8,8 @@ namespace CoreDBMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS ServiceLogs;
-                 CREATE TABLE ServiceLogs(
+               @"DROP TABLE IF EXISTS servicelogs;
+                 CREATE TABLE servicelogs(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     inputId int,
                     input varchar(1000),
@@ -18,7 +18,7 @@ namespace CoreDBMigrations.Migrations
                     stack varchar(1000),
                     serviceId int,
                     statusId int,
-                    FOREIGN KEY (statusId) REFERENCES ServiceStatus(id),
+                    FOREIGN KEY (statusId) REFERENCES servicestatus(id),
                     output varchar(5000),
                     createdAt DATETIME
                 );";
@@ -29,7 +29,7 @@ namespace CoreDBMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS ServiceLogs;";
+               @"DROP TABLE IF EXISTS servicelogs;";
 
             Execute.Sql(sql);
         }
