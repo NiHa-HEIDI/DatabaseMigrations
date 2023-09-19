@@ -8,8 +8,8 @@ namespace CoreDBMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS Services;
-                 CREATE TABLE Services(
+               @"DROP TABLE IF EXISTS services;
+                 CREATE TABLE services(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                name varchar(255),
                     isRunning BOOLEAN,
@@ -23,7 +23,7 @@ namespace CoreDBMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS Services;";
+               @"DROP TABLE IF EXISTS services;";
 
             Execute.Sql(sql);
         }
