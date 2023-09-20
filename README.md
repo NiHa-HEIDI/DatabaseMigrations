@@ -62,7 +62,7 @@ Then, we add a entry into the city table with the connection string of database 
 
 ```sql
 USE heidi_core;
-INSERT INTO CITIES (id, name, connectionString) VALUES (1, "City 1", "server=localhost;user=devuser;password=devpassword;database=heidi_city_1");
+INSERT INTO cities (id, name, connectionString) VALUES (1, "City 1", "server=localhost;user=devuser;password=devpassword;database=heidi_city_1");
 
 ```
 

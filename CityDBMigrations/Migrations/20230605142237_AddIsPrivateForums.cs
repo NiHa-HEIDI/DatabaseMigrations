@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE FORUMS ADD COLUMN isPrivate bool;";
+               @"ALTER TABLE forums ADD COLUMN isPrivate bool;";
 
             Execute.Sql(sql);
         }
@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-                @"ALTER TABLE FORUMS DROP COLUMN isPrivate;";
+                @"ALTER TABLE forums DROP COLUMN isPrivate;";
 
             Execute.Sql(sql);
         }

@@ -8,8 +8,8 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS User_CityUser_Mapping;
-                CREATE TABLE User_CityUser_Mapping (
+               @"DROP TABLE IF EXISTS user_cityuser_mapping;
+                CREATE TABLE user_cityuser_mapping (
 	                userId int,
 	                cityId int,
 	                cityUserId int,
@@ -22,7 +22,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS User_CityUser_Mapping;";
+               @"DROP TABLE IF EXISTS user_cityuser_mapping;";
 
             Execute.Sql(sql);
         }

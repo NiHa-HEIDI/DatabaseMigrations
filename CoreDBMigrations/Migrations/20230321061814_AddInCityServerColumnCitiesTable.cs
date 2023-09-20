@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE CITIES ADD COLUMN inCityServer bool;";
+               @"ALTER TABLE cities ADD COLUMN inCityServer bool;";
 
             Execute.Sql(sql);
         }
@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE CITIES DROP COLUMN inCityServer;";
+               @"ALTER TABLE cities DROP COLUMN inCityServer;";
 
             Execute.Sql(sql);
         }

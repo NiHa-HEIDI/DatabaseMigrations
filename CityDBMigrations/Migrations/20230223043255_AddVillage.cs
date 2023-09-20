@@ -19,7 +19,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS VILLAGE;";
+               @"DROP TABLE IF EXISTS village;";
 
             Execute.Sql(sql);
         }

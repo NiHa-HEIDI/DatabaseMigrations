@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE ForumRequests ADD COLUMN id int NOT NULL PRIMARY KEY AUTO_INCREMENT;";
+               @"ALTER TABLE forumrequests ADD COLUMN id int NOT NULL PRIMARY KEY AUTO_INCREMENT;";
 
             Execute.Sql(sql);
         }
@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-                @"ALTER TABLE ForumRequests DROP COLUMN id;";
+                @"ALTER TABLE forumrequests DROP COLUMN id;";
 
             Execute.Sql(sql);
         }

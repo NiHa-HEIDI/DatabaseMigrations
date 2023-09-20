@@ -108,7 +108,7 @@ namespace test
                         cmd.Connection = conn;
                         conn.Open();
 
-                        cmd.CommandText = "SELECT Id, ConnectionString FROM CITIES";
+                        cmd.CommandText = "SELECT Id, ConnectionString FROM cities";
                         MySqlDataAdapter da = new MySqlDataAdapter(cmd);
                         da.Fill(dt);
 

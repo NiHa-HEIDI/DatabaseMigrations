@@ -20,7 +20,7 @@ namespace DatabaseMigrations.Migrations
             string sql =
                 @"
                 ALTER TABLE forumcomments DROP FOREIGN KEY fk_forumcomments_id_parent_id;
-                ALTER TABLE ForumRequests DROP COLUMN parentId;";
+                ALTER TABLE forumrequests DROP COLUMN parentId;";
 
             Execute.Sql(sql);
         }

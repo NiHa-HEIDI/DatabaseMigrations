@@ -8,8 +8,8 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE USERS ADD COLUMN emailVerified bool;
-                UPDATE USERS set emailVerified = true where id = 1;";
+               @"ALTER TABLE users ADD COLUMN emailVerified bool;
+                UPDATE users set emailVerified = true where id = 1;";
 
             Execute.Sql(sql);
         }
@@ -17,7 +17,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE USERS DROP COLUMN emailVerified;";
+               @"ALTER TABLE users DROP COLUMN emailVerified;";
 
             Execute.Sql(sql);
         }

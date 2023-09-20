@@ -13,9 +13,9 @@ namespace DatabaseMigrations.Migrations
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                name varchar(255),
                     categoryId int,
-                    FOREIGN KEY (categoryId) REFERENCES CATEGORIES(id)
+                    FOREIGN KEY (categoryId) REFERENCES categories(id)
                 );
-                insert into SUBCATEGORY (name, categoryId) values (""Newsflash"",1),(""Alerts"",1),(""Politics"",1),(""Economy"",1),(""Sport"",1),(""Topic of the day"",1),(""Local"",1),(""Club News"",1);";
+                insert into subcategory (name, categoryId) values (""Newsflash"",1),(""Alerts"",1),(""Politics"",1),(""Economy"",1),(""Sport"",1),(""Topic of the day"",1),(""Local"",1),(""Club News"",1);";
             Execute.Sql(sql);
         }
 

@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE CITIES ADD COLUMN image VARCHAR(255);";
+               @"ALTER TABLE cities ADD COLUMN image VARCHAR(255);";
 
             Execute.Sql(sql);
         }
@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE CITIES DROP COLUMN image;";
+               @"ALTER TABLE cities DROP COLUMN image;";
 
             Execute.Sql(sql);
         }

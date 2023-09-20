@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE REFRESHTOKENS ADD COLUMN browser varchar(255), ADD COLUMN device varchar(255) ;";
+               @"ALTER TABLE refreshtokens ADD COLUMN browser varchar(255), ADD COLUMN device varchar(255) ;";
 
             Execute.Sql(sql);
         }
@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE CITIES DROP COLUMN browser, DROP COLUMN device;";
+               @"ALTER TABLE cities DROP COLUMN browser, DROP COLUMN device;";
 
             Execute.Sql(sql);
         }

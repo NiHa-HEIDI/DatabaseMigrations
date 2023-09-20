@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"insert into ForumStatus values (1,""Pending""), (2,""Accepted""), (3,""Rejected"");";
+               @"insert into forumstatus values (1,""Pending""), (2,""Accepted""), (3,""Rejected"");";
 
             Execute.Sql(sql);
         }
