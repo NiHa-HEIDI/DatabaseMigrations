@@ -16,7 +16,7 @@ namespace DatabaseMigrations.Migrations
 
         public override void Down()
         {
-            string sql = @"DELETE FROM services WHERE id = 1 AND id = 2;";
+            string sql = @"DELETE FROM services WHERE id = 1 OR id = 2;";
             Execute.Sql(sql);
         }
     }
