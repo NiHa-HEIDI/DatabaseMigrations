@@ -2,6 +2,7 @@
 using System.Data;
 using System.Reflection;
 using FluentMigrator.Runner;
+using FluentMigrator.Runner.VersionTableInfo;
 using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
 using MySql.Data.MySqlClient;
@@ -152,6 +153,7 @@ namespace test
                 // Enable logging to console in the FluentMigrator way
                 .AddLogging(lb => lb.AddFluentMigratorConsole())
                 // Build the service provider
+                .AddScoped(typeof(IVersionTableMetaData), typeof(CustomVersionTableMetaData))
                 .BuildServiceProvider(false);
         }
 
@@ -173,6 +175,27 @@ namespace test
             {
                 runner.MigrateUp();
             }
+        }   
+    
+    
+        [VersionTableMetaData]
+        public class CustomVersionTableMetaData : IVersionTableMetaData
+        {
+            public virtual string SchemaName => "";
+
+            public virtual string TableName => "versioninfo";
+
+            public virtual string ColumnName => "Version";
+
+            public virtual string UniqueIndexName => "UC_Version";
+
+            public virtual string AppliedOnColumnName => "AppliedOn";
+
+            public virtual string DescriptionColumnName => "Description";
+
+            public virtual bool OwnsSchema => true;
+
+            public object ApplicationContext { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         }
     }
 }
