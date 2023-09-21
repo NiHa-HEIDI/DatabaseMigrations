@@ -13,7 +13,8 @@ namespace DatabaseMigrations.Migrations
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                name varchar(255),
                     token varchar(1000),
-                    serviceid int NOT NULL
+                    serviceid int NOT NULL,
+                    FOREIGN KEY (serviceid) REFERENCES services(id)
                 );";
 
             Execute.Sql(sql);
