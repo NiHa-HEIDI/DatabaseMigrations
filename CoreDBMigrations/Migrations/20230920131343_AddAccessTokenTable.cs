@@ -8,8 +8,8 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS accesstable;
-                CREATE TABLE accesstable(
+               @"DROP TABLE IF EXISTS accesstoken;
+                CREATE TABLE accesstoken(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	                name varchar(255),
                     token varchar(1000),
@@ -22,7 +22,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS accesstable;";
+               @"DROP TABLE IF EXISTS accesstoken;";
 
             Execute.Sql(sql);
         }
