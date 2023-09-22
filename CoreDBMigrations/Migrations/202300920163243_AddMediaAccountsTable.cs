@@ -11,9 +11,9 @@ namespace CoreDBMigrations.Migrations
                @"DROP TABLE IF EXISTS mediaaccount;
                  CREATE TABLE mediaaccount(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	                accountid int NOT NULL,
+	                accountid varchar(255) NOT NULL,
                     cityid int NOT NULL,
-                    name varchar(255),
+                    username varchar(255),
 	                acoounttype varchar(255),
                     metadata varchar(1000)
                 );";
