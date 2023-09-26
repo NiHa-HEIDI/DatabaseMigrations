@@ -8,8 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DELETE FROM services WHERE id = 1 OR id = 2;
-               INSERT INTO services (id, name, isRunning, safeStop, createdAt) VALUES (1, ""Delete Expired Listings"", 0, 0,  UTC_TIMESTAMP), (2, ""Fetch Insta Posts"", 0, 0,  UTC_TIMESTAMP);";
+               @"INSERT INTO services (id, name, isRunning, safeStop, createdAt) VALUES (1, ""Delete Expired Listings"", 0, 0,  UTC_TIMESTAMP), (2, ""Fetch Insta Posts"", 0, 0,  UTC_TIMESTAMP);";
 
             Execute.Sql(sql);
         }
