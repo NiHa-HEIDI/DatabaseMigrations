@@ -10,7 +10,7 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"INSERT INTO subcategory(id, name, categoryId) values (11,""Social Media"", 1);
                ALTER TABLE listings RENAME COLUMN media TO externalId;
-               INSERT INTO source(id, name, categoryId) values (2,""Instagram"");
+               INSERT INTO source(id, name) values (2,""Instagram"");
                ";
 
             Execute.Sql(sql);
