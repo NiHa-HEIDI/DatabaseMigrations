@@ -8,9 +8,7 @@ namespace CoreDBMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE citizen_services
-                ADD isExternalLink BOOLEAN DEFAULT FALSE;
-                );";
+               @"ALTER TABLE citizen_services ADD isExternalLink BOOLEAN DEFAULT FALSE;";
 
             Execute.Sql(sql);
         }
