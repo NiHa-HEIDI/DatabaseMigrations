@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20231018114424)]
-    public class MakeExternalIDUnique : Migration
+    public class AlterTableIncreaseDescriptionListing : Migration
     {
         public override void Up()
         {
