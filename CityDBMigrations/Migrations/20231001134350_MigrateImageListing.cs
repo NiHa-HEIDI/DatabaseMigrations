@@ -10,10 +10,10 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"INSERT INTO Listing_Images (
                     listingId,
-                    logo
+                    logo,
+                    imageOrder
                 )
-                SELECT id, logo FROM listings WHERE logo IS NOT NULL AND logo != '';
-                UPDATE Listing_Images SET `imageOrder`=1;
+                SELECT id, logo, 1 as imageOrder FROM listings WHERE logo IS NOT NULL AND logo != '';
                 ALTER TABLE listings DROP COLUMN logo;
                ";
 
