@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20230802102756)]
+    [Migration(20231025162727)]
     public class AddSPToDeleteForums : Migration
     {
         public override void Up()
@@ -11,6 +11,7 @@ namespace DatabaseMigrations.Migrations
                 Changes made
                 --------------------------------------------------------------------------
                 2 August 2023 -> changed postReports to RepostedPosts - Sonu
+                25 Oct 2023 -> changed commentes to delete not null parents - Ajay
             */
             string sql =
                @"
@@ -23,6 +24,7 @@ namespace DatabaseMigrations.Migrations
                             RESIGNAL;
                         END;
                     START TRANSACTION;
+                        DELETE FROM forumcomments fc where fc.forumId = forumId and fc.parentId is not NULL;
                         DELETE FROM forumcomments fc where fc.forumId = forumId;
                         DELETE FROM reportedposts pr where pr.forumId = forumId;
                         DELETE FROM forumposts fp where fp.forumId = forumId;
