@@ -13,7 +13,7 @@ namespace DatabaseMigrations.Migrations
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
                     imageOrder int,
 	                listingId int,
-                    logo varchar(255),
+                    logo varchar(1000),
                     FOREIGN KEY (listingId) REFERENCES listings(id)
                 );
                ";
