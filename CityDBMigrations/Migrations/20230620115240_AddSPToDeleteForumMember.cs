@@ -14,6 +14,7 @@ namespace DatabaseMigrations.Migrations
                 10 August 2023 ->Added logic to remove reports made on the user - Ajay
                 13 Sept 2023 -> Changed ReportedPosts to reportedposts - Moiz
                 16 Oct 2023 -> Bugfix deleting comments gets forignkey constraint - Moiz
+                08 Nov 2023 -> Updated Forum member delete to delete from forumrequest table - Amay
             */
             string sql =
                @"
@@ -38,6 +39,8 @@ namespace DatabaseMigrations.Migrations
                         DELETE fc1 FROM forumcomments fc1 INNER JOIN forumposts fc2 ON fc1.postId = fc2.id WHERE fc2.userId = userId and fc2.forumId = forumId;
 		                DELETE FROM forumposts fp where fp.forumId = forumId and fp.userId = userId;
 		                DELETE FROM forummembers fm where fm.forumId = forumId and fm.userId = userId;
+                        DELETE FROM forumrequests fr where fr.forumId = forumId and fr.userId = userId;
+
                         SET SQL_SAFE_UPDATES = 1;
 	                COMMIT;
                 END;";
