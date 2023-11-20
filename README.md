@@ -32,7 +32,8 @@ FLUSH PRIVILEGES;
 
 ### Execute migrations
 
-Then run the migrations on your local machine. To do this, go to  **rootfile/DatabaseMigrations**
+Then run the migrations on your local machine. 
+First clone this project on your local machine. Then, go to  **rootfile/DatabaseMigrations**
 
 ## Detailed documentation 
 
