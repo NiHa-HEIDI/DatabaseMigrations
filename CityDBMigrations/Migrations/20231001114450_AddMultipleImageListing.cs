@@ -8,8 +8,8 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS Listing_Images;
-                CREATE TABLE Listing_Images (
+               @"DROP TABLE IF EXISTS listing_images;
+                CREATE TABLE listing_images (
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
                     imageOrder int,
 	                listingId int,
@@ -24,7 +24,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
              string sql =
-               @"DROP TABLE IF EXISTS Listing_Images;";
+               @"DROP TABLE IF EXISTS listing_images;";
 
             Execute.Sql(sql);
             
