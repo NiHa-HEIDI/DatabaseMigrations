@@ -2,14 +2,14 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20231211101206)]
+    [Migration(20231211101207)]
     public class AddSlotsTable : Migration
     {
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS Slots;
-               CREATE TABLE Slots (
+               @"DROP TABLE IF EXISTS slots;
+               CREATE TABLE slots (
                 id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
                 appointmentId INT,
                 dayId INT,
@@ -26,7 +26,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS Slots;";
+               @"DROP TABLE IF EXISTS slots;";
 
             Execute.Sql(sql);
         }

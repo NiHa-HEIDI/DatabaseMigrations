@@ -2,14 +2,14 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20231211101859)]
+    [Migration(20231211101858)]
     public class AddGuestsTable : Migration
     {
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS Guests;
-               CREATE TABLE Guests (
+               @"DROP TABLE IF EXISTS guests;
+               CREATE TABLE guests (
                 id INT PRIMARY KEY NOT NULL,
                 firstName VARCHAR(255),
                 lastName VARCHAR(255),
@@ -25,7 +25,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS Guests;";
+               @"DROP TABLE IF EXISTS guests;";
 
             Execute.Sql(sql);
         }
