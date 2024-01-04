@@ -17,7 +17,7 @@ namespace DatabaseMigrations.Migrations
                 endTime DATETIME,
                 maxBookings INT,
                 FOREIGN KEY (appointmentId) REFERENCES appointments(id),
-                FOREIGN KEY (dayId) REFERENCES Days(id)
+                FOREIGN KEY (dayId) REFERENCES days(id)
             );";
 
             Execute.Sql(sql);

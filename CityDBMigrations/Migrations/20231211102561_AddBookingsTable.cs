@@ -16,8 +16,8 @@ namespace DatabaseMigrations.Migrations
                 guestId INT,
                 isGuest BOOLEAN,
                 description TEXT,
-                FOREIGN KEY (slotId) REFERENCES Slots(id),
-                FOREIGN KEY (guestId) REFERENCES Guests(id),
+                FOREIGN KEY (slotId) REFERENCES slots(id),
+                FOREIGN KEY (guestId) REFERENCES guests(id),
                 FOREIGN KEY (userId) REFERENCES users(id)
             );";
 
