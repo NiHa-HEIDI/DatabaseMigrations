@@ -1,0 +1,32 @@
+using FluentMigrator;
+
+namespace DatabaseMigrations.Migrations
+{
+    [Migration(20240119132947)]
+    public class AddShelves: Migration
+    {
+        public override void Up()
+        {
+            string sql =
+               @"DROP TABLE IF EXISTS shelves;
+                CREATE TABLE shelves (
+	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    shopId int,
+                    productId int,
+                    title varchar(255),
+                    description varchar(255),
+                    FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE,
+                    FOREIGN KEY (productId) REFERENCES products(id) ON DELETE CASCADE
+                );";
+            Execute.Sql(sql);
+        }
+
+        public override void Down()
+        {
+            string sql =
+               @"DROP TABLE IF EXISTS shelves;";
+
+            Execute.Sql(sql);
+        }
+    }
+}
