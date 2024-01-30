@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20240119134025)]
-    public class AddCartItems: Migration
+    public class AddCartItemsTable: Migration
     {
         public override void Up()
         {
@@ -11,6 +11,9 @@ namespace DatabaseMigrations.Migrations
                @"DROP TABLE IF EXISTS cartitems;
                 CREATE TABLE cartitems (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    createdAt DATETIME,
+                    updatedAt DATETIME,
+                    deletedAt DATETIME,
                     cartId int,
                     productId int,
                     quantity int,

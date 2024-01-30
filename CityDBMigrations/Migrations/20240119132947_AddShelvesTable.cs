@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20240119132947)]
-    public class AddShelves: Migration
+    public class AddShelvesTable: Migration
     {
         public override void Up()
         {
@@ -11,6 +11,9 @@ namespace DatabaseMigrations.Migrations
                @"DROP TABLE IF EXISTS shelves;
                 CREATE TABLE shelves (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    createdAt DATETIME,
+                    updatedAt DATETIME,
+                    deletedAt DATETIME,
                     shopId int,
                     productId int,
                     title varchar(255),

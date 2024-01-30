@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20240119134153)]
-    public class AddPayments: Migration
+    public class AddPaymentsTable: Migration
     {
         public override void Up()
         {
@@ -11,6 +11,9 @@ namespace DatabaseMigrations.Migrations
                @"DROP TABLE IF EXISTS payments;
                 CREATE TABLE payments (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    createdAt DATETIME,
+                    updatedAt DATETIME,
+                    deletedAt DATETIME,
                     paymentId varchar(255),
                     paymentProviderType varchar(255),
                     status int,

@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20240119133541)]
-    public class AddProductImages: Migration
+    public class AddProductImagesTable: Migration
     {
         public override void Up()
         {
@@ -11,6 +11,9 @@ namespace DatabaseMigrations.Migrations
                @"DROP TABLE IF EXISTS productimages;
                 CREATE TABLE productimages (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    createdAt DATETIME,
+                    updatedAt DATETIME,
+                    deletedAt DATETIME,
                     productId int,
                     sequence int,
                     url varchar(255),

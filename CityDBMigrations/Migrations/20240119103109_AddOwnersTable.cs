@@ -3,14 +3,17 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20240119103109)]
-    public class AddOwners: Migration
+    public class AddOwnersTable: Migration
     {
         public override void Up()
         {
             string sql =
                @"DROP TABLE IF EXISTS owners;
                 CREATE TABLE owners (
-	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT, 
+	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    createdAt DATETIME,
+                    updatedAt DATETIME,
+                    deletedAt DATETIME,
                     shopId int,
                     userId int,
                     FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE,

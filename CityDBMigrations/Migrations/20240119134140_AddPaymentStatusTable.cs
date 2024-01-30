@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20240119134140)]
-    public class AddPaymentStatus: Migration
+    public class AddPaymentStatusTable: Migration
     {
         public override void Up()
         {
