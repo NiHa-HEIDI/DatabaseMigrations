@@ -27,8 +27,6 @@ namespace DatabaseMigrations.Migrations
 
         public override void Down()
         {
-            string sql = @"";
-            Execute.Sql(sql);
         }
     }
 }
