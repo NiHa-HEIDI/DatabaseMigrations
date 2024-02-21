@@ -3,13 +3,13 @@ using FluentMigrator;
 namespace DatabaseMigrations.Migrations
 {
     [Migration(20240214152713)]
-    public class AddOwnersTable: Migration
+    public class AddShopOwnersTable: Migration
     {
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS owners;
-                CREATE TABLE owners (
+               @"DROP TABLE IF EXISTS shop_owners;
+                CREATE TABLE shop_owners (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     createdAt DATETIME,
                     updatedAt DATETIME,
@@ -25,7 +25,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS owners;";
+               @"DROP TABLE IF EXISTS shop_owners;";
 
             Execute.Sql(sql);
         }
