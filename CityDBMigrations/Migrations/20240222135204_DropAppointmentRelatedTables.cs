@@ -15,7 +15,6 @@ namespace DatabaseMigrations.Migrations
                 DROP TABLE IF EXISTS slots;
                 DROP TABLE IF EXISTS appointments;
                 DROP TABLE IF EXISTS days;
-                ALTER TABLE listings ADD appointmentId INT;
                ";
 
             Execute.Sql(sql);
