@@ -20,8 +20,7 @@ namespace DatabaseMigrations.Migrations
                     latitude double,
                     longitude double,
                     description varchar(255),
-                    checkedInUser int,
-                    FOREIGN KEY (checkedInUser) REFERENCES users(id)
+                    checkedIn int
                 );";
             Execute.Sql(sql);
         }
