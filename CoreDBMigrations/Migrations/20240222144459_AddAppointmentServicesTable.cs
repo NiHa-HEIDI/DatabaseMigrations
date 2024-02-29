@@ -10,7 +10,7 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS appointmentServices;
                CREATE TABLE appointmentServices (
-                id INT PRIMARY KEY NOT NULL,
+                id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
                 appointmentId INT,
                 name VARCHAR(255),
                 userId INT,

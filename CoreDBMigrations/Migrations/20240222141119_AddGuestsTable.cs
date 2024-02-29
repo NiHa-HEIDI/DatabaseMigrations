@@ -10,7 +10,7 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS guests;
                CREATE TABLE guests (
-                id INT PRIMARY KEY NOT NULL,
+                id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
                 firstName VARCHAR(255),
                 lastName VARCHAR(255),
                 emailId VARCHAR(255),

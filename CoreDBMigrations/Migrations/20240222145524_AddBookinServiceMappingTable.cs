@@ -10,7 +10,7 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS BookingServiceMapping;
                CREATE TABLE BookingServiceMapping (
-                id INT PRIMARY KEY NOT NULL,
+                id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
                 bookingId INT,
                 serviceId INT,
                 FOREIGN KEY (bookingId) REFERENCES bookings(id),
