@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20240229061934)]
+    [Migration(20240229095934)]
     public class AddAddSpToDeleteCoreUser : Migration
     {
         public override void Up()
@@ -25,7 +25,7 @@ namespace DatabaseMigrations.Migrations
 		                DELETE FROM forgot_password_tokens fpt WHERE fpt.userId = userId;
 		                DELETE FROM verification_tokens vt WHERE vt.userId = userId;
 		                DELETE FROM favorites f WHERE f.userId = userId;
-		                DELETE FROM users u WHERE u.userId = userId;
+		                DELETE FROM users u WHERE u.id = userId;
 
                         SET SQL_SAFE_UPDATES = 1;
                     COMMIT;
