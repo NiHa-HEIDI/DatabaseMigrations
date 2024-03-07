@@ -23,9 +23,10 @@ namespace DatabaseMigrations.Migrations
                     meta varchar(255),
                     isActive boolean,
                     archived boolean,
-                    created_at DATETIME,
-                    updated_at DATETIME,
-                    archived_at DATETIME
+                    sellerId int,
+                    deletedBy int,
+                    FOREIGN KEY (sellerId) REFERENCES sellers(id) ON DELETE CASCADE
+                    FOREIGN KEY (deletedBy) REFERENCES users(id)
                 );";
             Execute.Sql(sql);
         }
