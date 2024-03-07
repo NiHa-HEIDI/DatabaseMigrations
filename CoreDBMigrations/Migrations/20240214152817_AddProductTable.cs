@@ -25,7 +25,7 @@ namespace DatabaseMigrations.Migrations
                     archived boolean,
                     sellerId int,
                     deletedBy int,
-                    FOREIGN KEY (sellerId) REFERENCES sellers(id) ON DELETE CASCADE
+                    FOREIGN KEY (sellerId) REFERENCES sellers(id) ON DELETE CASCADE,
                     FOREIGN KEY (deletedBy) REFERENCES users(id)
                 );";
             Execute.Sql(sql);
