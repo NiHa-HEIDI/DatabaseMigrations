@@ -20,13 +20,15 @@ namespace DatabaseMigrations.Migrations
                     tax double,
                     inventory int,
                     minCount int,
+                    shopId int,
                     meta varchar(255),
                     isActive boolean,
                     archived boolean,
                     sellerId int,
                     deletedBy int,
                     FOREIGN KEY (sellerId) REFERENCES sellers(id) ON DELETE CASCADE,
-                    FOREIGN KEY (deletedBy) REFERENCES users(id)
+                    FOREIGN KEY (deletedBy) REFERENCES users(id),
+                    FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE
                 );";
             Execute.Sql(sql);
         }
