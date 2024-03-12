@@ -20,6 +20,7 @@ namespace DatabaseMigrations.Migrations
                     tax double,
                     inventory int,
                     minCount int,
+                    maxCount int,
                     shopId int,
                     meta varchar(255),
                     isActive boolean,
