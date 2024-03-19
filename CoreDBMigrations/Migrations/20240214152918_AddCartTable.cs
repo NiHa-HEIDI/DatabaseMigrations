@@ -15,7 +15,9 @@ namespace DatabaseMigrations.Migrations
                     updatedAt DATETIME,
                     deletedAt DATETIME,
                     userId int,
-                    FOREIGN KEY (userId) REFERENCES users(id)
+                    shopId int,
+                    FOREIGN KEY (userId) REFERENCES users(id),
+                    FOREIGN KEY (shopId) REFERENCES shops(id)
                 );";
             Execute.Sql(sql);
         }
