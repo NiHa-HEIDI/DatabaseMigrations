@@ -18,11 +18,13 @@ namespace DatabaseMigrations.Migrations
                     shopId int,
                     amount double,
                     userId int,
+                    cartId int,
                     paymentId int,
                     discount double,
                     FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE,
                     FOREIGN KEY (userId) REFERENCES users(id),
-                    FOREIGN KEY (paymentId) REFERENCES payments(id) ON DELETE CASCADE
+                    FOREIGN KEY (paymentId) REFERENCES payments(id) ON DELETE CASCADE,
+                    FOREIGN KEY (cartId) REFERENCES cart(id) ON DELETE CASCADE
                 );";
             Execute.Sql(sql);
         }
