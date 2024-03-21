@@ -17,6 +17,7 @@ namespace DatabaseMigrations.Migrations
                     cartId int,
                     productId int,
                     quantity int,
+                    pricePerQuantity double,
                     FOREIGN KEY (cartId) REFERENCES cart(id) ON DELETE CASCADE,
                     FOREIGN KEY (productId) REFERENCES products(id) ON DELETE CASCADE
                 );";
