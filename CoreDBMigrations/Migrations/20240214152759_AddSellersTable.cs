@@ -17,6 +17,8 @@ namespace DatabaseMigrations.Migrations
                     shopId int,
                     userId int,
                     description varchar(255),
+                    title varchar(255),
+                    status int,
                     FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE,
                     FOREIGN KEY (userId) REFERENCES users(id)
                 );";
