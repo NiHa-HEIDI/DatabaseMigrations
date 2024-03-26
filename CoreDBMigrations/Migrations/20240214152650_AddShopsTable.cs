@@ -19,6 +19,7 @@ namespace DatabaseMigrations.Migrations
                     address varchar(255),
                     latitude double,
                     longitude double,
+                    access_key varchar(255),
                     description varchar(255)
                 );";
             Execute.Sql(sql);
