@@ -14,13 +14,11 @@ namespace DatabaseMigrations.Migrations
                     createdAt DATETIME,
                     updatedAt DATETIME,
                     deletedAt DATETIME,
-                    shopId int,
                     status int,
                     userId int,
                     balance double,
                     expiryMonth int,
                     expiryYear int,
-                    FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE,
                     FOREIGN KEY (userId) REFERENCES users(id)
                 );";
             Execute.Sql(sql);
