@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20240229061934)]
+    [Migration(20240229062907)]
     public class AddAddSpToDeleteCoreUser : Migration
     {
         public override void Up()
