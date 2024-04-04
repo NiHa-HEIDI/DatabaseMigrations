@@ -15,9 +15,11 @@ namespace DatabaseMigrations.Migrations
                     updatedAt DATETIME,
                     deletedAt DATETIME,
                     cardId int,
+                    accountId int,
                     amount double,
                     type int,
-                    FOREIGN KEY (cardId) REFERENCES store_card(id) ON DELETE CASCADE
+                    FOREIGN KEY (cardId) REFERENCES store_card(id) ON DELETE CASCADE,
+                    FOREIGN KEY (accountId) REFERENCES card_account(id) ON DELETE CASCADE
                 );";
             Execute.Sql(sql);
         }
