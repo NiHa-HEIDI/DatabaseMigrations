@@ -19,6 +19,7 @@ namespace DatabaseMigrations.Migrations
                     description varchar(255),
                     title varchar(255),
                     status int,
+                    paymentOwed double,
                     FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE,
                     FOREIGN KEY (userId) REFERENCES users(id)
                 );";
