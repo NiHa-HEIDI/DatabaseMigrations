@@ -8,8 +8,8 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"ALTER TABLE mediaaccount ADD accountTypeId INT,
-               ADD CONSTRAINT FK_accountTypeId FOREIGN KEY (accountTypeId) REFERENCES services (id);";
+               @"ALTER TABLE mediaaccount ADD serviceId INT,
+               ADD CONSTRAINT FK_serviceId FOREIGN KEY (serviceId) REFERENCES services (id);";
 
             Execute.Sql(sql);
         }
@@ -17,8 +17,8 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"ALTER TABLE mediaaccount DROP CONSTRAINT FK_accountTypeId;
-               ALTER TABLE mediaaccount DROP COLUMN accountTypeId;";
+               @"ALTER TABLE mediaaccount DROP CONSTRAINT FK_serviceId;
+               ALTER TABLE mediaaccount DROP COLUMN serviceId;";
 
             Execute.Sql(sql);
         }
