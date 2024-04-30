@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DatabaseMigrations.Migrations
 {
-    [Migration(20242304151342)]
+    [Migration(20240423151342)]
     public class ChangeColumnNameMetaData : Migration
     {
         public override void Up()
