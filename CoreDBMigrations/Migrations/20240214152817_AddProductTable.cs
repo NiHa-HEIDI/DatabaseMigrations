@@ -16,6 +16,8 @@ namespace DatabaseMigrations.Migrations
                     deletedAt DATETIME,
                     title varchar(255),
                     description varchar(255),
+                    categoryId int,
+                    subCategoryId int,
                     price double,
                     tax double,
                     inventory int,
@@ -29,7 +31,9 @@ namespace DatabaseMigrations.Migrations
                     deletedBy int,
                     FOREIGN KEY (sellerId) REFERENCES sellers(id) ON DELETE CASCADE,
                     FOREIGN KEY (deletedBy) REFERENCES users(id),
-                    FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE
+                    FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE,
+                    FOREIGN KEY (categoryId) REFERENCES store_categories(id),
+                    FOREIGN KEY (subCategoryId) REFERENCES store_sub_categories(id)
                 );";
             Execute.Sql(sql);
         }
