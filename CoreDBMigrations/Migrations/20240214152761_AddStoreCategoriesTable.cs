@@ -12,7 +12,8 @@ namespace DatabaseMigrations.Migrations
                 CREATE TABLE store_categories (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     name varchar(255),
-                    description varchar(255)
+                    description varchar(255),
+                    image varchar(255),
                 );";
             Execute.Sql(sql);
         }

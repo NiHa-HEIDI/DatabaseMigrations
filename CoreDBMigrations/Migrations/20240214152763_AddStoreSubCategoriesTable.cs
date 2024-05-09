@@ -14,6 +14,7 @@ namespace DatabaseMigrations.Migrations
                     name varchar(255),
                     description varchar(255),
                     categoryId int,
+                    image varchar(255),
                     FOREIGN KEY (categoryId) REFERENCES store_categories(id)
                 );";
             Execute.Sql(sql);
