@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS cart;
+               @"DROP TABLE IF EXISTS cart CASCADE;
                 CREATE TABLE cart (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     createdAt DATETIME,
@@ -17,7 +17,7 @@ namespace DatabaseMigrations.Migrations
                     userId int,
                     shopId int,
                     FOREIGN KEY (userId) REFERENCES users(id),
-                    FOREIGN KEY (shopId) REFERENCES shops(id)
+                    FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE
                 );";
             Execute.Sql(sql);
         }
@@ -25,7 +25,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS cart;";
+               @"DROP TABLE IF EXISTS cart CASCADE;";
 
             Execute.Sql(sql);
         }

@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS product_requests;
+               @"DROP TABLE IF EXISTS product_requests CASCADE;
                 CREATE TABLE product_requests (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     createdAt DATETIME,
@@ -35,7 +35,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS product_requests;";
+               @"DROP TABLE IF EXISTS product_requests CASCADE;";
 
             Execute.Sql(sql);
         }

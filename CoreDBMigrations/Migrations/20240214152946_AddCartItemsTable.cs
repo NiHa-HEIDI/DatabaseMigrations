@@ -8,7 +8,7 @@ namespace DatabaseMigrations.Migrations
         public override void Up()
         {
             string sql =
-               @"DROP TABLE IF EXISTS cartitems;
+               @"DROP TABLE IF EXISTS cartitems CASCADE;
                 CREATE TABLE cartitems (
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     createdAt DATETIME,
@@ -27,7 +27,7 @@ namespace DatabaseMigrations.Migrations
         public override void Down()
         {
             string sql =
-               @"DROP TABLE IF EXISTS cartitems;";
+               @"DROP TABLE IF EXISTS cartitems CASCADE;";
 
             Execute.Sql(sql);
         }
