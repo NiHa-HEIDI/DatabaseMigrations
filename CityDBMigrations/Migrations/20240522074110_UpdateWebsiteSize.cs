@@ -9,8 +9,7 @@ namespace DatabaseMigrations.Migrations
         {
             string sql =
                @"ALTER TABLE listings DROP INDEX externalId;
-               ALTER TABLE listings MODIFY COLUMN externalId TEXT, MODIFY COLUMN website TEXT;
-               CREATE INDEX externalId ON listings (externalId(255));";
+               ALTER TABLE listings MODIFY COLUMN externalId TEXT, MODIFY COLUMN website TEXT;";
 
             Execute.Sql(sql);
         }
