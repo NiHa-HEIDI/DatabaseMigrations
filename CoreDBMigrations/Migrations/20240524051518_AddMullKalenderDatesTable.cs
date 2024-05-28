@@ -10,9 +10,9 @@ namespace CoreDBMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS mullkalender_dates;
                  CREATE TABLE mullkalender_dates(
-                    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     dateEpoch int NOT NULL,
-                    dateGroup int NOT NULL
+                    dateGroup int NOT NULL,
+                    UNIQUE (dateEpoch, dateGroup)
                 );";
 
             Execute.Sql(sql);

@@ -11,7 +11,8 @@ namespace CoreDBMigrations.Migrations
                @"DROP TABLE IF EXISTS mullkalender_waste_types;
                  CREATE TABLE mullkalender_waste_types(
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-                    name varchar(255) NOT NULL
+                    name varchar(255) NOT NULL,
+                    UNIQUE (id, name)
                 );";
 
             Execute.Sql(sql);

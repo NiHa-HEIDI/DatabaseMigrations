@@ -10,10 +10,11 @@ namespace CoreDBMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS mullkalender_pickup_groups;
                  CREATE TABLE mullkalender_pickup_groups(
-                    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    pickupGroupId int,
                     wasteId int NOT NULL,
                     dateGroupId int NOT NULL,
-                    FOREIGN KEY (wasteId) REFERENCES mullkalender_waste_types(id)
+                    FOREIGN KEY (wasteId) REFERENCES mullkalender_waste_types(id),
+                    UNIQUE (pickupGroupId, wasteId, dateGroupId)
                 );";
 
             Execute.Sql(sql);

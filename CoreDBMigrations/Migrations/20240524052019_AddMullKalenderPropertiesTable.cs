@@ -10,12 +10,12 @@ namespace CoreDBMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS mullkalender_properties;
                  CREATE TABLE mullkalender_properties(
-                    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    id int NOT NULL PRIMARY KEY,
                     zip varchar(32) NOT NULL,
-                    district_id int NOT NULL,
+                    districtId int NOT NULL,
                     pickupGroupId int NOT NULL,
-                    FOREIGN KEY (district_id) REFERENCES mullkalender_districts(id),
-                    FOREIGN KEY (pickupGroupId) REFERENCES mullkalender_pickup_groups(id)
+                    FOREIGN KEY (districtId) REFERENCES mullkalender_districts(id),
+                    UNIQUE (id, zip, districtId, pickupGroupId)
                 );";
 
             Execute.Sql(sql);

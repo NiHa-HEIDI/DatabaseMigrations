@@ -11,7 +11,8 @@ namespace CoreDBMigrations.Migrations
                @"DROP TABLE IF EXISTS mullkalender_districts;
                  CREATE TABLE mullkalender_districts(
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-                    name varchar(255) NOT NULL
+                    name varchar(255) NOT NULL,
+                    UNIQUE (id, name)
                 );";
 
             Execute.Sql(sql);

@@ -13,9 +13,9 @@ namespace CoreDBMigrations.Migrations
                     streetId int NOT NULL,
                     houseNumber varchar(255) NOT NULL,
                     propertyId int NOT NULL,
-                    PRIMARY KEY (streetId, houseNumber, propertyId),
                     FOREIGN KEY (streetId) REFERENCES mullkalender_streets(id),
-                    FOREIGN KEY (propertyId) REFERENCES mullkalender_properties(id)                    
+                    FOREIGN KEY (propertyId) REFERENCES mullkalender_properties(id),
+                    UNIQUE (streetId, houseNumber, propertyId)
                 );";
 
             Execute.Sql(sql);
