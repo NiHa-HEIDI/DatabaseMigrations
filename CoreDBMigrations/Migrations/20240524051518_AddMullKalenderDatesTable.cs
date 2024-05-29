@@ -11,6 +11,7 @@ namespace CoreDBMigrations.Migrations
                @"DROP TABLE IF EXISTS mullkalender_dates;
                  CREATE TABLE mullkalender_dates(
                     dateEpoch int NOT NULL,
+                    dateOfPickup date NOT NULL,
                     dateGroup int NOT NULL,
                     UNIQUE (dateEpoch, dateGroup)
                 );";
