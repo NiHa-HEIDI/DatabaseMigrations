@@ -10,7 +10,7 @@ namespace DatabaseMigrations.Migrations
             string sql =
                @"DROP TABLE IF EXISTS product_request_images CASCADE;
                 CREATE TABLE product_request_images (
-	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
                     createdAt DATETIME,
                     updatedAt DATETIME,
                     deletedAt DATETIME,
