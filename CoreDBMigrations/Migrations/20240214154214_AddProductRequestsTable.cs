@@ -25,9 +25,14 @@ namespace DatabaseMigrations.Migrations
                     threshold int,
                     maxCount int,
                     status int,
+                    categoryId int,
+                    subCategoryId int,
                     FOREIGN KEY (shopId) REFERENCES shops(id) ON DELETE CASCADE,
                     FOREIGN KEY (productId) REFERENCES products(id) ON DELETE CASCADE,
-                    FOREIGN KEY (sellerId) REFERENCES sellers(id) ON DELETE CASCADE
+                    FOREIGN KEY (sellerId) REFERENCES sellers(id) ON DELETE CASCADE,
+                    FOREIGN KEY (categoryId) REFERENCES store_categories(id) ON DELETE CASCADE,
+                    FOREIGN KEY (subCategoryId) REFERENCES store_sub_categories(id) ON DELETE CASCADE
+
                 );";
             Execute.Sql(sql);
         }
