@@ -3,7 +3,7 @@ using FluentMigrator;
 namespace CoreDBMigrations.Migrations
 {
     [Migration(20240827143809)]
-    public class AddEnabledColumnToCategories : Migration
+    public class ResetCategories : Migration
     {
         public override void Up()
         {
