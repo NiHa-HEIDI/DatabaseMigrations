@@ -51,11 +51,11 @@ namespace CoreDBMigrations.Migrations
                     (39, 'Abfallwirtschaft', false, 39),
                     (40, 'Bürgerbeteiligung', false, 40),
                     (41, 'Highlights', false, 41),
-                    (42, 'Project', false, 42);
+                    (42, 'Project', false, 42)
                 ON DUPLICATE KEY UPDATE
+                    name = name,
                     isEnabled = true,
-                    category_order = VALUES(category_order);
-
+                    category_order = category_order;
                 ";
 
             Execute.Sql(sql);
