@@ -30,10 +30,10 @@ jobs:
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.TEST_HOST_1 }}
-          username: ${{ secrets.TEST_HOST_1_USERNAME }}
-          key: ${{ secrets.TEST_HOST_1_SSH_KEY }}
-          port: ${{ secrets.TEST_HOST_1_PORT }}
-          source: "./DbMigrations/*"
+          username: ${{ secrets.TEST_HOST_1_USERNAME}}
+          port: 22
+          password: ${{ secrets.TEST_HOST_1_PASSWORD}}
+          source: "*"
           target: ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations
 
       - name: Run migrations on Test Server
@@ -47,7 +47,7 @@ jobs:
             cd ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations/DatabaseMigrations
             
             dotnet build
-            
+
             if [ -z "${{ github.event.inputs.targetVersion }}" ]; then
               dotnet run dbType=${{ github.event.inputs.dbType }} migrate=${{ github.event.inputs.migrate }}
             else
