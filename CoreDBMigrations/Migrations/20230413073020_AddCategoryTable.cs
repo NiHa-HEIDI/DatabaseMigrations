@@ -15,7 +15,8 @@ namespace DatabaseMigrations.Migrations
                     noOfSubcategories int DEFAULT 0
                 );
                 INSERT INTO categories (name, noOfSubcategories) values ('News', 8);
-                INSERT INTO categories (name) values ('Road works / Traffic'), ('Events'), ('Clubs'), ('Regional Products'), ('Offer / Search'), ('New citizen info'), ('Defect report'), ('Lost and Found'), ('Company portraits'), ('Carpooling / Public transport'), ('Offers');";
+                INSERT INTO categories (name) values ('Road works / Traffic'), ('Events'), ('Clubs'), ('Regional Products'), ('Offer / Search'), ('New citizen info'), ('Defect report'), ('Lost and Found'), ('Company portraits'), ('Carpooling / Public transport'), ('Offers');
+                ";
 
             Execute.Sql(sql);
         }

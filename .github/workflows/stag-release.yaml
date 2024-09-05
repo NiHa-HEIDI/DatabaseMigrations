@@ -1,0 +1,56 @@
+name: Stage Release
+
+on:
+  push:
+    branches:
+      - develop
+  workflow_dispatch:
+    inputs:
+      dbType:
+        description: 'Database type (all, core, city)'
+        required: false
+        default: 'all'
+      migrate:
+        description: 'Migration direction (up, down)'
+        required: false
+        default: 'up'
+      targetVersion:
+        description: 'Target version for migration (optional)'
+        required: false
+        default: ''
+
+jobs:
+  deploy_on_stag_server:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Copy files via SSH on Test Server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.TEST_HOST_1 }}
+          username: ${{ secrets.TEST_HOST_1_USERNAME }}
+          key: ${{ secrets.TEST_HOST_1_SSH_KEY }}
+          port: ${{ secrets.TEST_HOST_1_PORT }}
+          source: "./DbMigrations/*"
+          target: ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations
+
+      - name: Run migrations on Test Server
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.TEST_HOST_1 }}
+          username: ${{ secrets.TEST_HOST_1_USERNAME }}
+          key: ${{ secrets.TEST_HOST_1_SSH_KEY }}
+          port: ${{ secrets.TEST_HOST_1_PORT }}
+          script: |
+            cd ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations/DatabaseMigrations
+            
+            dotnet build
+            
+            if [ -z "${{ github.event.inputs.targetVersion }}" ]; then
+              dotnet run dbType=${{ github.event.inputs.dbType }} migrate=${{ github.event.inputs.migrate }}
+            else
+              dotnet run dbType=${{ github.event.inputs.dbType }} migrate=${{ github.event.inputs.migrate }} targetVersion=${{ github.event.inputs.targetVersion }}
+            fi
+
