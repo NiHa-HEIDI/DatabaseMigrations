@@ -45,8 +45,6 @@ jobs:
           port: 22
           script: |
             cd ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations/DatabaseMigrations
-            
-            dotnet build
 
             dbType=${{ github.event.inputs.dbType }}
             migrate=${{ github.event.inputs.migrate }}
@@ -70,5 +68,7 @@ jobs:
             echo "Running command: $runCommand"
 
             # Run the command
+            dotnet clean
+            dotnet build
             $runCommand
 
