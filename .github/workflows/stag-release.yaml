@@ -31,10 +31,12 @@ jobs:
         with:
           host: ${{ secrets.TEST_HOST_1 }}
           username: ${{ secrets.TEST_HOST_1_USERNAME}}
-          port: 22
           password: ${{ secrets.TEST_HOST_1_PASSWORD}}
-          source: "*"
-          target: ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations
+          port: 22
+          script: |
+            # Rsync to sync files and delete files no longer present locally
+            # Exclude files listed in .gitignore
+            rsync -av --delete --exclude='.gitignore' --exclude-from='.gitignore' ./DbMigrations/ ${{ secrets.TEST_HOST_1_USERNAME }}@${{ secrets.TEST_HOST_1 }}:${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations/
 
       - name: Run migrations on Test Server
         uses: appleboy/ssh-action@v0.1.5
