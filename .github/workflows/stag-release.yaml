@@ -48,9 +48,21 @@ jobs:
             
             dotnet build
 
-            if [ -z "${{ github.event.inputs.targetVersion }}" ]; then
-              dotnet run dbType=${{ github.event.inputs.dbType }} migrate=${{ github.event.inputs.migrate }}
+            dbType=${{ github.event.inputs.dbType }}
+            migrate=${{ github.event.inputs.migrate }}
+            targetVersion=${{ github.event.inputs.targetVersion }}
+
+            if [ -z "$dbType" ]; then
+              dbType="all"
+            fi
+
+            if [ -z "$migrate" ]; then
+              migrate="up"
+            fi
+
+            if [ -z "$targetVersion" ]; then
+              dotnet run dbType=$dbType migrate=$migrate
             else
-              dotnet run dbType=${{ github.event.inputs.dbType }} migrate=${{ github.event.inputs.migrate }} targetVersion=${{ github.event.inputs.targetVersion }}
+              dotnet run dbType=$dbType migrate=$migrate targetVersion=$targetVersion
             fi
 
