@@ -42,7 +42,7 @@ jobs:
           host: ${{ secrets.TEST_HOST_1 }}
           username: ${{ secrets.TEST_HOST_1_USERNAME }}
           key: ${{ secrets.TEST_HOST_1_SSH_KEY }}
-          port: ${{ secrets.TEST_HOST_1_PORT }}
+          port: 22
           script: |
             cd ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations/DatabaseMigrations
             
