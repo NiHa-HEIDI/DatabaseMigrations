@@ -61,8 +61,14 @@ jobs:
             fi
 
             if [ -z "$targetVersion" ]; then
-              dotnet run dbType=$dbType migrate=$migrate
+              runCommand="dotnet run dbType=$dbType migrate=$migrate"
             else
-              dotnet run dbType=$dbType migrate=$migrate targetVersion=$targetVersion
+              runCommand="dotnet run dbType=$dbType migrate=$migrate targetVersion=$targetVersion"
             fi
+
+            # Log the command
+            echo "Running command: $runCommand"
+
+            # Run the command
+            $runCommand
 
