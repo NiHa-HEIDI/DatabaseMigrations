@@ -1,0 +1,27 @@
+name: Create Draft Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  create_release_draft:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create Draft Release
+        id: create-new-release
+        uses: release-drafter/release-drafter@v6
+        env:
+          GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
+
+      - name: Debug Draft Release
+        run: |
+          echo "Current Draft Release URL: ${{ steps.get_draft_release.outputs.html_url }}"
+          echo "Draft Release ID: ${{ steps.create-new-release.outputs.id }}"
+          echo "Draft Release HTML URL: ${{ steps.create-new-release.outputs.html_url }}"
