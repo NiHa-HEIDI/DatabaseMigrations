@@ -26,21 +26,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Update repository on the server
-        uses: appleboy/ssh-action@v0.1.5
+      - name: Copy files on Test Server
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.TEST_HOST_1 }}
-          username: ${{ secrets.TEST_HOST_1_USERNAME }}
-          password: ${{ secrets.TEST_HOST_1_PASSWORD }}
+          username: ${{ secrets.TEST_HOST_1_USERNAME}}
+          password: ${{ secrets.TEST_HOST_1_PASSWORD}}
           port: 22
-          script: |
-            cd ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations
-
-            # Ensure the correct branch is checked out
-            git checkout -f develop
-
-            # Pull the latest changes from the remote repository
-            git pull origin develop
+          source: "*"
+          target: ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations
+          rm: true  # Remove existing files on target before copying new files
 
 
       - name: Run migrations on Test Server
