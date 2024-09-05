@@ -31,10 +31,12 @@ jobs:
         with:
           host: ${{ secrets.TEST_HOST_1 }}
           username: ${{ secrets.TEST_HOST_1_USERNAME}}
-          port: 22
           password: ${{ secrets.TEST_HOST_1_PASSWORD}}
+          port: 22
           source: "*"
           target: ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations
+          rm: true  # Remove existing files on target before copying new files
+
 
       - name: Run migrations on Test Server
         uses: appleboy/ssh-action@v0.1.5
