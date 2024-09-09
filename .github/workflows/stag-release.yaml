@@ -26,18 +26,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Copy files on Test Server
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.TEST_HOST_1 }}
-          username: ${{ secrets.TEST_HOST_1_USERNAME}}
-          password: ${{ secrets.TEST_HOST_1_PASSWORD}}
-          port: 22
-          source: "*"
-          target: ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations
-          rm: true  # Remove existing files on target before copying new files
-
-
       - name: Run migrations on Test Server
         uses: appleboy/ssh-action@v0.1.5
         with:
@@ -47,6 +35,10 @@ jobs:
           port: 22
           script: |
             cd ${{ secrets.TEST_HOST_1_APPDIR }}/DbMigrations/DatabaseMigrations
+
+            git checkout -f develop
+            git reset --hard
+            git pull
 
             dbType=${{ github.event.inputs.dbType }}
             migrate=${{ github.event.inputs.migrate }}
@@ -71,6 +63,6 @@ jobs:
 
             # Run the command
             dotnet clean
-            dotnet build
-            $runCommand
+            dotnet build || { echo "Build failed"; exit 1; }
+            $runCommand || { echo "Migration command failed"; exit 1; }
 
