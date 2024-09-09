@@ -3,7 +3,6 @@ using System.Data;
 using System.Reflection;
 using FluentMigrator.Runner;
 using FluentMigrator.Runner.VersionTableInfo;
-using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.DependencyInjection;
 using MySql.Data.MySqlClient;
 
