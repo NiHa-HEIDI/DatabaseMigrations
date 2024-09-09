@@ -38,7 +38,7 @@ jobs:
 
             git checkout -f develop
             git reset --hard
-            git pull
+            git pull || { echo "Git pull failed"; exit 1; }
 
             dbType=${{ github.event.inputs.dbType }}
             migrate=${{ github.event.inputs.migrate }}
