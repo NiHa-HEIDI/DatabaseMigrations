@@ -133,6 +133,9 @@ jobs:
           script: |
             cd ${{ env.APPDIR }}/DbMigrations/DatabaseMigrations
 
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/githubNew
+            
             git checkout -f main
             git reset --hard
             git pull || { echo "Git pull failed"; exit 1; }
