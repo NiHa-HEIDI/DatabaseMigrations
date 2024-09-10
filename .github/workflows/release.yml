@@ -133,7 +133,10 @@ jobs:
           script: |
             cd ${{ env.APPDIR }}/DbMigrations/DatabaseMigrations
 
-            git checkout -f main
+            eval "$(ssh-agent -s)"
+            ssh-add ~/.ssh/githubNew
+
+            git checkout -f main || { echo "Git checkout failed"; exit 1; }
             git reset --hard
             git pull || { echo "Git pull failed"; exit 1; }
 
