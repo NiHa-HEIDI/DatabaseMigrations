@@ -96,24 +96,24 @@ jobs:
             echo "PASSWORD=${{ secrets.WUNSIEDEL_PASSWORD }}" >> $GITHUB_ENV
             echo "APPDIR=${{ secrets.WUNSIEDEL_APPDIR }}" >> $GITHUB_ENV
           elif [[ "${{ matrix.project }}" == "hasslachtalMitwitz" ]]; then
-            echo "HOST=${{ secrets.MITWITZ_HOST_NAME }}" >> $GITHUB_ENV
-            echo "USERNAME=${{ secrets.MITWITZ_USERNAME }}" >> $GITHUB_ENV
-            echo "PASSWORD=${{ secrets.MITWITZ_PASSWORD }}" >> $GITHUB_ENV
+            echo "HOST=${{ secrets.HASSLACHTAL_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.HASSLACHTAL_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.HASSLACHTAL_PASSWORD }}" >> $GITHUB_ENV
             echo "APPDIR=${{ secrets.MITWITZ_APPDIR }}" >> $GITHUB_ENV
           elif [[ "${{ matrix.project }}" == "hasslachtalPressig" ]]; then
-            echo "HOST=${{ secrets.PRESSIG_HOST_NAME }}" >> $GITHUB_ENV
-            echo "USERNAME=${{ secrets.PRESSIG_USERNAME }}" >> $GITHUB_ENV
-            echo "PASSWORD=${{ secrets.PRESSIG_PASSWORD }}" >> $GITHUB_ENV
+            echo "HOST=${{ secrets.HASSLACHTAL_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.HASSLACHTAL_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.HASSLACHTAL_PASSWORD }}" >> $GITHUB_ENV
             echo "APPDIR=${{ secrets.PRESSIG_APPDIR }}" >> $GITHUB_ENV
           elif [[ "${{ matrix.project }}" == "hasslachtalSchneckenlohe" ]]; then
-            echo "HOST=${{ secrets.SCHNECKENLOHE_HOST_NAME }}" >> $GITHUB_ENV
-            echo "USERNAME=${{ secrets.SCHNECKENLOHE_USERNAME }}" >> $GITHUB_ENV
-            echo "PASSWORD=${{ secrets.SCHNECKENLOHE_PASSWORD }}" >> $GITHUB_ENV
+            echo "HOST=${{ secrets.HASSLACHTAL_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.HASSLACHTAL_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.HASSLACHTAL_PASSWORD }}" >> $GITHUB_ENV
             echo "APPDIR=${{ secrets.SCHNECKENLOHE_APPDIR }}" >> $GITHUB_ENV
           elif [[ "${{ matrix.project }}" == "hasslachtalStockheim" ]]; then
-            echo "HOST=${{ secrets.STOCKHEIM_HOST_NAME }}" >> $GITHUB_ENV
-            echo "USERNAME=${{ secrets.STOCKHEIM_USERNAME }}" >> $GITHUB_ENV
-            echo "PASSWORD=${{ secrets.STOCKHEIM_PASSWORD }}" >> $GITHUB_ENV
+            echo "HOST=${{ secrets.HASSLACHTAL_HOST_NAME }}" >> $GITHUB_ENV
+            echo "USERNAME=${{ secrets.HASSLACHTAL_USERNAME }}" >> $GITHUB_ENV
+            echo "PASSWORD=${{ secrets.HASSLACHTAL_PASSWORD }}" >> $GITHUB_ENV
             echo "APPDIR=${{ secrets.STOCKHEIM_APPDIR }}" >> $GITHUB_ENV
           elif [[ "${{ matrix.project }}" == "einbeck" ]]; then
             echo "HOST=${{ secrets.EINBECK_HOST_NAME }}" >> $GITHUB_ENV
