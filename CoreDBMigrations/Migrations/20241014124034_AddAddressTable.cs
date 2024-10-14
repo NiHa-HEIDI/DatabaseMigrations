@@ -17,7 +17,7 @@ namespace CoreDBMigrations.Migrations
                     pincode INT,
                     city VARCHAR(255),
                     createdAt DATETIME,
-                    FOREIGN KEY (userId) REFERENCES users(id)
+                    FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE
                 );";
 
             Execute.Sql(sql);
