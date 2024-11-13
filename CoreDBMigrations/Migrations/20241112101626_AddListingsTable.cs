@@ -37,6 +37,7 @@ namespace DatabaseMigrations.Migrations
                     FOREIGN KEY(sourceId) REFERENCES source(id),
                     startDate DATETIME,
                     statusId INT,
+                    FOREIGN KEY(statusId) REFERENCES status(id),
                     subcategoryId INT,
                     FOREIGN KEY(subcategoryId) REFERENCES subcategory(Id),
                     title VARCHAR(255),
