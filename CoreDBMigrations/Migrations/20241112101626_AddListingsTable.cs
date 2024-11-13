@@ -14,6 +14,7 @@ namespace DatabaseMigrations.Migrations
                     oldId INT,
                     address VARCHAR(255),
                     appointmentId INT,
+                    FOREIGN KEY(appointmentId) REFERENCES appointments(id),
                     categoryId INT,
                     FOREIGN KEY(categoryId) REFERENCES categories(id),
                     cityId INT NOT NULL,
