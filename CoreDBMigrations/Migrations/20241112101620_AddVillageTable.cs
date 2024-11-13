@@ -11,7 +11,9 @@ namespace DatabaseMigrations.Migrations
                @"DROP TABLE IF EXISTS village;
                 CREATE TABLE village(
 	                id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-	                name varchar(255)
+	                name varchar(255),
+                    cityId INT,
+                    FOREIGN KEY(cityId) REFERENCES cities(id)
                 );";
             Execute.Sql(sql);
         }
