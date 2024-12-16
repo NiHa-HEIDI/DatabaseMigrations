@@ -30,6 +30,14 @@ namespace CoreDBMigrations.Migrations
 
         public override void Down()
         {
+            string sql =
+               @"
+                DELETE FROM subcategory WHERE id IN (12, 13, 14, 15);
+                DELETE FROM categories WHERE id IN (45, 46, 47);
+                ";
+            Execute.Sql(sql);
+
+
         }
     }
 }
