@@ -16,7 +16,6 @@ namespace CoreDBMigrations.Migrations
                 INSERT INTO source (name) VALUES ('User entry');
                 INSERT INTO source(id, name) values (2,""Instagram"");
                 INSERT INTO source(id, name) values (3,""Scrapper"");
-                INSERT INTO source (name) VALUES ('Scrapper');
                 ";
 
             Execute.Sql(sql);
