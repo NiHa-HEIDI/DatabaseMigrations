@@ -11,7 +11,9 @@ namespace CoreDBMigrations.Migrations
                @"DROP TABLE IF EXISTS village;
                CREATE TABLE village (
                     id INT AUTO_INCREMENT PRIMARY KEY,
-                    name VARCHAR(255) NOT NULL
+                    name VARCHAR(255) NOT NULL,
+                    cityId INT,
+                    FOREIGN KEY(cityId) REFERENCES cities(id) ON DELETE CASCADE
                 );";
 
             Execute.Sql(sql);

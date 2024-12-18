@@ -43,8 +43,7 @@ namespace CoreDBMigrations.Migrations
                     FOREIGN KEY (subcategoryId) REFERENCES subcategory(id) ON DELETE CASCADE,
                     FOREIGN KEY (statusId) REFERENCES status(id) ON DELETE CASCADE,
                     FOREIGN KEY (sourceId) REFERENCES source(id) ON DELETE CASCADE, --
-                    FOREIGN KEY (villageId) REFERENCES village(id) ON DELETE CASCADE, --
-                    FOREIGN KEY (appointmentId) REFERENCES city_appointments(id) ON DELETE CASCADE
+                    FOREIGN KEY (villageId) REFERENCES village(id) ON DELETE CASCADE
                 );";
 
             Execute.Sql(sql);
