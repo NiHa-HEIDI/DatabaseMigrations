@@ -10,7 +10,7 @@ namespace CoreDBMigrations.Migrations
                @"DROP TABLE IF EXISTS listing_images;
                 CREATE TABLE listing_images (
                     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
-                    imagsOrder INT,
+                    imageOrder INT,
                     listingId INT,
                     logo VARCHAR(1000),
                     FOREIGN KEY(listingId) REFERENCES listings(id)
