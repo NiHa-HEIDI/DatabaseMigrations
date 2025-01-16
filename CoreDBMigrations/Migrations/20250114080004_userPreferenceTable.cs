@@ -30,8 +30,7 @@ namespace CoreDBMigrations.Migrations
         {
             string sql =
                @"DROP TABLE IF EXISTS user_preference_cities;
-                DROP TABLE IF EXISTS user_preference_categories;
-                DROP TABLE IF EXISTS user_preferences;";
+                DROP TABLE IF EXISTS user_preference_categories;";
 
             Execute.Sql(sql);
         }
